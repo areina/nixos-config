@@ -88,6 +88,7 @@
     blueman
     pavucontrol
     pass
+    ghostscript
 
     (texlive.combine {
       inherit (pkgs.texlive) scheme-medium wrapfig ulem capt-of
