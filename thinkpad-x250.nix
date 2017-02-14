@@ -87,6 +87,7 @@
     gimp
     blueman
     pavucontrol
+    pass
 
     (texlive.combine {
       inherit (pkgs.texlive) scheme-medium wrapfig ulem capt-of
