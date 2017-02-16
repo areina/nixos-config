@@ -81,6 +81,7 @@
     ag
     xclip
     xorg.xbacklight
+    lightlocker
     gparted
     uget
     qtox
