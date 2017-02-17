@@ -50,6 +50,7 @@
   nixpkgs.config = {
     allowUnfree = true; # Allow "unfree" packages.
 
+    firefox.enableAdobeFlash = true;
     chromium.enablePepperFlash = true;
   };
 
@@ -66,6 +67,7 @@
     conkeror
     curl
     chromium
+    firefox
     rxvt_unicode-with-plugins
     tmux
     gnumake
