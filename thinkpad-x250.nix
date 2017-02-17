@@ -90,6 +90,9 @@
     pavucontrol
     pass
     ghostscript
+    zuki-themes
+    faba-icon-theme
+    faba-mono-icons
 
     (texlive.combine {
       inherit (pkgs.texlive) scheme-medium wrapfig ulem capt-of
@@ -107,6 +110,14 @@
 
     android-studio
     genymotion
+  ];
+
+  environment.pathsToLink = [
+    "/share/xfce4"
+    "/share/themes"
+    "/share/mime"
+    "/share/desktop-directories"
+    "/share/gtksourceview-2.0"
   ];
 
   virtualisation.virtualbox.host.enable = true;
@@ -127,8 +138,23 @@
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.kdm.enable = true;
   # services.xserver.desktopManager.kde4.enable = true;
-
-  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.sessionCommands = ''
+    # Set GTK_PATH so that GTK+ can find the theme engines.
+    export GTK_PATH="${config.system.path}/lib/gtk-2.0:${config.system.path}/lib/gtk-3.0"
+    # Set GTK_DATA_PREFIX so that GTK+ can find the Xfce themes.
+    export GTK_DATA_PREFIX=${config.system.path}
+    # SVG loader for pixbuf
+    export GDK_PIXBUF_MODULE_FILE=$(echo ${pkgs.librsvg.out}/lib/gdk-pixbuf-2.0/*/loaders.cache)
+    # Set XDG menu prefix
+    export XDG_MENU_PREFIX="lxde-"
+  '';
+  services.xserver.displayManager.lightdm = {
+    enable = true;
+    greeters.gtk = {
+      theme.package = pkgs.zuki-themes;
+      theme.name = "Zukitre";
+    };
+  };
   services.xserver.desktopManager.gnome3.enable = true;
   environment.gnome3.excludePackages = with pkgs.gnome3; [
     epiphany
