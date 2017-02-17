@@ -75,6 +75,7 @@
     aspell
     aspellDicts.en
     aspellDicts.es
+    aspellDicts.ca
     imagemagick
     offlineimap
     mu
