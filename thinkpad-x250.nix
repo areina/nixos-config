@@ -96,6 +96,7 @@
     zuki-themes
     faba-icon-theme
     faba-mono-icons
+    wirelesstools
 
     (texlive.combine {
       inherit (pkgs.texlive) scheme-medium wrapfig ulem capt-of
