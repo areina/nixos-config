@@ -62,7 +62,6 @@
     wget
     git
     gnupg
-    gnupg1
     emacs25
     conkeror
     curl
@@ -97,6 +96,8 @@
     faba-icon-theme
     faba-mono-icons
     wirelesstools
+    syncthing
+    xfce.xfce4notifyd
 
     (texlive.combine {
       inherit (pkgs.texlive) scheme-medium wrapfig ulem capt-of
@@ -115,6 +116,11 @@
 
     android-studio
     genymotion
+
+    stumpwm
+    lispPackages.quicklisp
+
+    vagrant
   ];
 
   environment.variables = { GOROOT = [ "${pkgs.go.out}/share/go" ]; };
