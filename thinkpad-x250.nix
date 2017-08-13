@@ -131,6 +131,12 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
+
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
@@ -143,8 +149,8 @@
   services.xserver.xkbOptions = "grp:shifts_toggle,ctrl:nocaps";
 
   # Enable the KDE Desktop Environment.
-  # services.xserver.displayManager.kdm.enable = true;
-  # services.xserver.desktopManager.kde4.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
   services.xserver.displayManager.sessionCommands = ''
     # Set GTK_PATH so that GTK+ can find the theme engines.
     export GTK_PATH="${config.system.path}/lib/gtk-2.0:${config.system.path}/lib/gtk-3.0"
@@ -209,6 +215,6 @@
 
 
   # The NixOS release to be compatible with for stateful data such as databases.
-  system.stateVersion = "17.03";
+  system.stateVersion = "17.09";
 
 }
