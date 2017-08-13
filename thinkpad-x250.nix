@@ -107,6 +107,7 @@
     sbcl
     leiningen
     sbt
+    go
 
     openjdk
     nodejs
@@ -115,6 +116,8 @@
     android-studio
     genymotion
   ];
+
+  environment.variables = { GOROOT = [ "${pkgs.go.out}/share/go" ]; };
 
   environment.pathsToLink = [
     "/share/xfce4"
