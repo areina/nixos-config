@@ -121,6 +121,8 @@
     lispPackages.quicklisp
 
     vagrant
+    kubectl
+    google-cloud-sdk
   ];
 
   environment.variables = { GOROOT = [ "${pkgs.go.out}/share/go" ]; };
