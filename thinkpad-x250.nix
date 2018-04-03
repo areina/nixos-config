@@ -134,6 +134,7 @@
   ];
 
   virtualisation.virtualbox.host.enable = true;
+  virtualisation.docker.enable = true;
 
   # List services that you want to enable:
 
@@ -217,7 +218,7 @@
     isNormalUser = true;
     home = "/home/toni";
     description = "Toni Reina";
-    extraGroups = ["wheel" "networkmanager" "vboxusers"];
+    extraGroups = ["wheel" "networkmanager" "vboxusers" "docker"];
     createHome = true;
     shell = "/run/current-system/sw/bin/zsh";
   };
