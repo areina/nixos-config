@@ -25,6 +25,9 @@
   hardware.pulseaudio.package = pkgs.pulseaudioFull; # support for bluetooth headsets
   hardware.bluetooth.enable = true;
 
+  hardware.opengl.driSupport32Bit = true;
+  hardware.pulseaudio.support32Bit = true;
+
   # Select internationalisation properties.
   i18n = {
     consoleFont = "Lat2-Terminus16";
@@ -123,6 +126,8 @@
     vagrant
     kubectl
     google-cloud-sdk
+
+    steam
   ];
 
   environment.variables = { GOROOT = [ "${pkgs.go.out}/share/go" ]; };
